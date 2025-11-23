@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="calculatorOther.css">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap' rel='stylesheet'>
+</head>
+<body>
+ 
+  <section class="container">
+    <div class="LeftPart">
+        <div class="TopAnimate">
+              <div class="Animate-Box">
+                <button class="BtnAnimate"> 3 </button>
+                <div class="point"></div>
+              </div>
+        </div>
+        <div class="centerDes">
+              <div class="Title">
+                <div class="Ui">
+                   UI
+                  </div>
+                <h3> BIG SUR</h3>
+                <div class="version"> 
+                  v1.0
+                </div>
+              </div>
+              <div class="name-box">
+                DESIGN AISSAM
+              </div>
+              <div class="Text">
+                Aissam : Calculator App ser Interface Design.🚀
+              </div>
+          </div>
+          <div class="BottomAnimate">
+            <div class="Animate-Box">
+              <button class="BtnAnimate"> 6 </button>
+              <div class="point"></div>
+            </div> 
+          </div>
+    </div>
+    <div class="RightPart">
+      <div class="Box-Calculator" id="calculatorContainer">
+        <!-- Added input field for display -->
+        <input type="hidden" id="intOperation" value="">
+        
+        <!-- Added id and click handler to white calculator -->
+        <div class="white-Calculator" id="whiteCalc" onclick="expandWhiteCalculator()">
+              <div class="operations topCalculator">
+                7 * 9
+              </div>
+              <div class="result" id="display_result">
+                  =1905454
+              </div>
+          
+              <div class="numbers" id="nbrshidden">
+                    <div class="line0"> 
+                      <button class="Acceuil" onclick="clearDisplay()"> sq </button> 
+                      <button> 3 </button>
+                      <button class="math_operation" onclick="appendToDisplay('%')"> po2 </button>
+                      <button class="math_operation" onclick="appendToDisplay('/')"> po3</button>
+                    </div>
+                    <div class="line1">
+                      <button class="Acceuil" onclick="clearDisplay()"> C </button> 
+                      <button> () </button>
+                    
+                      <button class="math_operation divBtn" onclick="appendToDisplay('/')"> ÷ </button>
+                    </div>
+                    <div class="line2">
+                      <div class="number">
+                        <button class="7" onclick="appendToDisplay('7')"> 7 </button> 
+                        <button class="8" onclick="appendToDisplay('8')"> 8 </button>
+                        <button class ="9" onclick="appendToDisplay('9')"> 9 </button>
+                      </div>
+                      <button class="math_operation multyBtn" onclick="appendToDisplay('*')">  x </button>
+                    </div>
+                    <div class="line3">
+                      <div class="number">
+                      <button onclick="appendToDisplay('4')"> 4 </button> 
+                      <button onclick="appendToDisplay('5')"> 5 </button>
+                      <button onclick="appendToDisplay('6')"> 6 </button>
+                      </div>
+                      <button class="math_operation subBtn" onclick="appendToDisplay('-')"> - </button>
+                    </div>
+                    <div class="line4">
+                      <div class="number">
+                        <button onclick="appendToDisplay('1')"> 1 </button> 
+                        <button onclick="appendToDisplay('2')"> 2 </button>
+                        <button onclick="appendToDisplay('3')"> 3 </button>
+                      </div>
+                      <button class="math_operation plusBtn" onclick="appendToDisplay('+')"> + </button>
+                    </div>
+                    <div class="line5">
+                      
+                      <button onclick="appendToDisplay('0')" class="zeroButton"> 0 </button>
+                      <button onclick="appendToDisplay('.')" class="virgule"> . </button>
+                      <button class="equal_operation" onclick="calculate()"> = </button>
+                    </div>
+              </div>
+        </div>
+        <!-- Added id and click handler to black calculator -->
+        <div class="black-Calculator BCGrand" id="blackCalc" onclick="expandBlackCalculator()">
+               <div class="operations topCalculator">
+                7 * 9
+              </div>
+              <div class="result" id="display_result">
+                  =1905454
+              </div>
+          
+              <div class="numbers numbersBlack">
+                    <div class="line0">
+                      
+                      <button class="Acceuil BlackBtn" onclick="clearDisplay()"> sq </button> 
+                      <button class="BlackBtn"> 3 </button>
+                      <button class="math_operation BlackBtn" onclick="appendToDisplay('%')"> po2 </button>
+                      <button class="math_operation BlackBtn" onclick="appendToDisplay('/')"> po3</button>
+                    </div>
+                    <div class="line1">
+                      <button class="Acceuil BlackBtn" onclick="clearDisplay()"> C </button> 
+                      <button class="BlackBtn"> () </button>
+                    
+                      <button class="math_operation divBtn BlackBtn" onclick="appendToDisplay('/')"> ÷ </button>
+                    </div>
+                    <div class="line2">
+                      <div class="number">
+                        <button class="7 BlackBtn" onclick="appendToDisplay('7')" > 7 </button> 
+                        <button class="8 BlackBtn" onclick="appendToDisplay('8')"> 8 </button>
+                        <button class ="9 BlackBtn" onclick="appendToDisplay('9')"> 9 </button>
+                      </div>
+                      <button class="math_operation multyBtn BlackBtn" onclick="appendToDisplay('*')">  x </button>
+                    </div>
+                    <div class="line3">
+                      <div class="number">
+                      <button onclick="appendToDisplay('4')" class="BlackBtn"> 4 </button> 
+                      <button onclick="appendToDisplay('5')" class="BlackBtn"> 5 </button>
+                      <button onclick="appendToDisplay('6')" class="BlackBtn"> 6 </button>
+                      </div>
+                      <button class="math_operation subBtn BlackBtn" onclick="appendToDisplay('-')"> - </button>
+                    </div>
+                    <div class="line4">
+                      <div class="number">
+                        <button onclick="appendToDisplay('1')" class="BlackBtn"> 1 </button> 
+                        <button onclick="appendToDisplay('2')" class="BlackBtn"> 2 </button>
+                        <button onclick="appendToDisplay('3')" class="BlackBtn"> 3 </button>
+                      </div>
+                      <button class="math_operation plusBtn BlackBtn" onclick="appendToDisplay('+')"> + </button>
+                    </div>
+                    <div class="line5">
+                
+                      <button onclick="appendToDisplay('0')" class="zeroButton BlackBtn" > 0 </button>
+                      <button onclick="appendToDisplay('.')"  class="virgule"> . </button>
+                      <button class="equal_operation BlackBtn " onclick="calculate()"> = </button>
+                    </div>
+              </div>
+        </div>
+        </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

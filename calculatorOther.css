@@ -1,0 +1,414 @@
+body {
+  background-color: rgb(160, 215, 255, 100);
+  font-family: "Source Sans Pro", sans-serif;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  gap: 30px;
+}
+/* left part*/
+.LeftPart {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 150px;
+  padding-top: 50px;
+  margin-left: 20px;
+  gap: 40px;
+  width: 35%;
+}
+.BtnAnimate {
+  margin-left: 40px;
+  background-color: rgba(255, 255, 255, 0.584);
+  backdrop-filter: blur(5px);
+  animation: pulse 3s infinite alternate;
+}
+@keyframes pulse {
+  0% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(180deg);
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+  }
+}
+.BtnAnimate:hover {
+  background-color : rgba(0, 0, 0, 0.8); /* Changes background on hover */
+  color: aliceblue;
+  transform: rotate(45deg);
+}
+.BottomAnimate {
+  display: flex;
+  justify-content: flex-end;
+  height: 80px;
+}
+.Animate-Box {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+.point {
+  width: 10px;
+  height: 10px;
+  background-color: #007aff;
+  border-radius: 50%;
+}
+
+.name-box {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  background-color: rgb(44, 168, 255, 100);
+  color: white;
+  border-radius: 10px;
+  height: 25px;
+  width: 120px;
+  padding-left: 10px;
+  margin-bottom: 7px;
+}
+.Title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+  margin-bottom: 20px;
+}
+.Ui {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: black;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.version {
+  display: flex;
+  justify-content: center;
+  background-color: #007aff;
+  border-radius: 40px;
+  color: white;
+  width: 50px;
+  height: 30px;
+  align-items: center;
+}
+h3 {
+  color: white;
+}
+.Text {
+  font-size: xx-large;
+  font-weight: bold;
+  width: 300px;
+}
+/* right part*/
+.RightPart {
+  width: 60%;
+  height: 100%;
+ 
+}
+.Box-Calculator {
+  display: flex;
+  width: 450px;
+  height: 450px;
+  background-color: rgb(16, 157, 255, 100);
+  border-radius: 50%;
+  gap: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-top: 100px;
+}
+/* Added expanded state - full screen with flex centering */
+.Box-Calculator.expanded {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(160, 215, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.white-Calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 45%;
+  height: calc(90% - 20px);
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.863) /* More opaque white at the top-left */,
+    rgba(255, 255, 255, 0.034) /* More transparent white at the bottom-right */
+  );
+  box-shadow: 50px 20px 15px 0 rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  margin-top: 10px;
+  margin-left: -5px;
+  border-radius: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Scale content 1.5x larger when expanded */
+.white-Calculator.expanded{
+  width: 200px;
+  height: 400px;
+  margin: 0;
+  padding: 20px;
+  transform: scale(1);
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 0.797);
+  /* style*/
+ 
+  
+}
+
+
+
+/* Hide white calculator when not expanded */
+.white-Calculator.hidden{
+  display: none;
+}
+
+.topCalculator {
+  height: 40px;
+  color: rgba(155, 148, 148, 0.897);
+  display: flex;
+  align-items: flex-end;
+}
+.result {
+  font-size: xx-large;
+  color: white;
+  margin-bottom: 40px;
+}
+button {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  width: 36px;
+  height: 34px;
+  border: none;
+  border-radius: 6px;
+  align-items: center;
+  font-size: large;
+}
+.numbers {
+  display: grid;
+  gap: 5px;
+  height: 231px;
+}
+.line0,
+.line1,
+.line2,
+.line3,
+.line4,
+.line5 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.line0 > button {
+  height: 20px;
+  border-radius: 16px;
+  font-size: small;
+}
+.line1 {
+  width: 75%;
+}
+.zeroButton {
+  width: 80px;
+  color: #19acff;
+}
+.divBtn {
+  background: linear-gradient(to top right, #add8ff, #add8ff);
+  color: rgb(16, 157, 255, 100);
+}
+.subBtn,
+.multyBtn {
+  margin-top: -40px;
+  color: rgb(16, 157, 255, 100);
+  border-width: 2px;
+  border-color: antiquewhite;
+  background: linear-gradient(to top right, #add8ff, #add8ff);
+}
+.plusBtn {
+  height: 50px;
+  margin-top: -40px;
+  color: rgb(16, 157, 255, 100);
+  background: linear-gradient(to top right, #add8ff, #add8ff);
+}
+.equal_operation {
+  height: 50px;
+  margin-top: -20px;
+  background-color: #19acff;
+  box-shadow: inset -1px 2px 10px rgb(255, 255, 255);
+}
+.virgule{
+
+  padding-bottom: 8px;
+}
+img {
+  width: 35px;
+  height: 35px;
+}
+input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: rgb(255, 255, 255, 0.6);
+  color: white;
+  font-size: 50px;
+  outline: none;
+}
+.number {
+  display: flex;
+  gap: 10px;
+}
+
+/* grand black calculator section*/
+.black-Calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 211.5px;
+  height: calc(90% - 10px);
+  background: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 1) /* More opaque white at the top-left */,
+    rgba(0, 0, 0, 0.8) /* More transparent white at the bottom-right */
+  );
+  box-shadow: 40px 15px 15px 0 rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+  border-radius: 20px;
+  padding-top: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Scale content 1.5x larger when expanded */
+.black-Calculator.expanded {
+  width: 200px;
+  height: 400px;
+  margin: 0;
+  padding: 20px;
+  transform: scale(1);
+  justify-content: flex-start;
+  
+  
+}
+
+/* Hide black calculator when not expanded */
+.black-Calculator.hidden {
+  display: none;
+}
+
+/* Added responsive button sizing for expanded state */
+.white-Calculator.expanded button,
+.black-Calculator.expanded button {
+  width: 42px;
+  height: 40px;
+  font-size: 18px;
+  gap :5px;
+   color: #007aff;
+   border:  white;
+}
+
+
+.white-Calculator.expanded .topCalculator,
+.black-Calculator.expanded .topCalculator {
+  height: 30px;
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+.white-Calculator.expanded .result,
+.black-Calculator.expanded .result {
+  font-size: large;
+  margin-bottom: 15px;
+}
+
+.white-Calculator.expanded .numbers,
+.black-Calculator.expanded .numbers {
+  height: auto;
+  margin-top: 45px;
+  gap: 10px;
+   
+}
+
+.white-Calculator.expanded .line0,
+.white-Calculator.expanded .line1,
+.white-Calculator.expanded .line2,
+.white-Calculator.expanded .line3,
+.white-Calculator.expanded .line4,
+.white-Calculator.expanded .line5,
+.black-Calculator.expanded .line0,
+.black-Calculator.expanded .line1,
+.black-Calculator.expanded .line2,
+.black-Calculator.expanded .line3,
+.black-Calculator.expanded .line4,
+.black-Calculator.expanded .line5 {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+.white-Calculator.expanded .line0 button, 
+.black-Calculator.expanded .line0 button {
+  border-radius: 20px;
+  height: 25px;
+  font-size: 12px;
+
+}
+
+.white-Calculator.expanded .zeroButton,
+.black-Calculator.expanded .zeroButton {
+  width: 90px;
+}
+
+.white-Calculator.expanded .plusBtn,
+.black-Calculator.expanded .plusBtn
+ {
+  height: 65px;
+  margin-top: -48px;
+  padding: 5px;
+  background-color: #109DFF;
+  
+}
+.white-Calculator.expanded .equal_operation,
+.black-Calculator.expanded .equal_operation{
+    height: 65px;
+    margin-top: -25px;
+    padding: 5px;
+    color: white;
+    background-color: #007aff;
+    box-shadow: none;
+}
+
+.white-Calculator.expanded .subBtn,
+.white-Calculator.expanded .multyBtn,
+.black-Calculator.expanded .subBtn,
+.black-Calculator.expanded .multyBtn {
+  margin-top: -49px;
+}
