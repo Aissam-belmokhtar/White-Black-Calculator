@@ -166,7 +166,7 @@ h3 {
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 50px;
-  cursor: pointer;
+  
   transition: all 0.3s ease;
 }
 
@@ -180,20 +180,21 @@ h3 {
   justify-content: flex-start;
   background-color: rgba(255, 255, 255, 0.797);
   /* style*/
- 
-  
+   
 }
-
-
-
 /* Hide white calculator when not expanded */
 .white-Calculator.hidden{
   display: none;
 }
+input.WhiteInp{
+  background-color: rgba(255, 255, 255, 0.797);
+}
+.DisplayInput{
+  display: none;
+}
 
 .topCalculator {
-  height: 40px;
-  color: rgba(155, 148, 148, 0.897);
+  
   display: flex;
   align-items: flex-end;
 }
@@ -214,6 +215,7 @@ button {
   border-radius: 6px;
   align-items: center;
   font-size: large;
+  cursor: pointer;
 }
 .numbers {
   display: grid;
@@ -254,13 +256,13 @@ button {
   border-color: antiquewhite;
   background: linear-gradient(to top right, #add8ff, #add8ff);
 }
-.plusBtn {
+.plusBtn{
   height: 50px;
   margin-top: -40px;
   color: rgb(16, 157, 255, 100);
   background: linear-gradient(to top right, #add8ff, #add8ff);
 }
-.equal_operation {
+.equal_operation{
   height: 50px;
   margin-top: -20px;
   background-color: #19acff;
@@ -275,12 +277,12 @@ img {
   height: 35px;
 }
 input {
-  height: 100%;
+  height: 70px;
   width: 100%;
   border: none;
-  background-color: rgb(255, 255, 255, 0.6);
-  color: white;
-  font-size: 50px;
+  background-color: rgba(255, 255, 255, 0.797);
+  color: #007aff;
+  font-size: 40px;
   outline: none;
 }
 .number {
@@ -316,7 +318,7 @@ input {
   padding: 20px;
   transform: scale(1);
   justify-content: flex-start;
-  
+  background-color: black;
   
 }
 
@@ -325,7 +327,15 @@ input {
   display: none;
 }
 
+.BlackInp{
+  background-color: black;
+
+}
+.RBInp{
+  display: none;
+}
 /* Added responsive button sizing for expanded state */
+
 .white-Calculator.expanded button,
 .black-Calculator.expanded button {
   width: 42px;
@@ -379,7 +389,6 @@ input {
   border-radius: 20px;
   height: 25px;
   font-size: 12px;
-
 }
 
 .white-Calculator.expanded .zeroButton,
@@ -412,3 +421,8 @@ input {
 .black-Calculator.expanded .multyBtn {
   margin-top: -49px;
 }
+.result{
+  color: #007aff;
+}
+
+

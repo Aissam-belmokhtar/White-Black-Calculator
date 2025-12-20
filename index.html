@@ -44,15 +44,15 @@
     <div class="RightPart">
       <div class="Box-Calculator" id="calculatorContainer">
         <!-- Added input field for display -->
-        <input type="hidden" id="intOperation" value="">
-        
+       <!--   <input type="hidden" id="intOperation" value=""> --> 
+
         <!-- Added id and click handler to white calculator -->
         <div class="white-Calculator" id="whiteCalc" onclick="expandWhiteCalculator()">
-              <div class="operations topCalculator">
-                7 * 9
+              <div class="operations topCalculator" id="inputDiv">
+                <input type="text" id="intOperation" class="WhiteInp"  onkeyup="CalculeWithInput()">
               </div>
               <div class="result" id="display_result">
-                  =1905454
+                  
               </div>
           
               <div class="numbers" id="nbrshidden">
@@ -102,16 +102,15 @@
         </div>
         <!-- Added id and click handler to black calculator -->
         <div class="black-Calculator BCGrand" id="blackCalc" onclick="expandBlackCalculator()">
-               <div class="operations topCalculator">
-                7 * 9
+              <div class="operations topCalculator">
+                  <input type="text" id="intOperation" class="BlackInp" onkeyup="CalculeWithInput()">
               </div>
-              <div class="result" id="display_result">
-                  =1905454
+              <div class="result Black_result" id="display_result">
+                  
               </div>
           
               <div class="numbers numbersBlack">
                     <div class="line0">
-                      
                       <button class="Acceuil BlackBtn" onclick="clearDisplay()"> sq </button> 
                       <button class="BlackBtn"> 3 </button>
                       <button class="math_operation BlackBtn" onclick="appendToDisplay('%')"> po2 </button>
@@ -119,8 +118,7 @@
                     </div>
                     <div class="line1">
                       <button class="Acceuil BlackBtn" onclick="clearDisplay()"> C </button> 
-                      <button class="BlackBtn"> () </button>
-                    
+                      <button class="BlackBtn">()</button>
                       <button class="math_operation divBtn BlackBtn" onclick="appendToDisplay('/')"> ÷ </button>
                     </div>
                     <div class="line2">
