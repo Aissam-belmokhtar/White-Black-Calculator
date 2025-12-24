@@ -166,7 +166,6 @@ h3 {
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 50px;
-  
   transition: all 0.3s ease;
 }
 
@@ -182,19 +181,21 @@ h3 {
   /* style*/
    
 }
+.white-Calculator.expanded .WhiteInp{
+  transform: scale(1);
+  /*  background-color: rgba(255, 255, 255, 0.797);*/
+    background-color: none;
+}
 /* Hide white calculator when not expanded */
 .white-Calculator.hidden{
   display: none;
 }
-input.WhiteInp{
-  background-color: rgba(255, 255, 255, 0.797);
-}
+
 .DisplayInput{
   display: none;
 }
 
 .topCalculator {
-  
   display: flex;
   align-items: flex-end;
 }
@@ -236,10 +237,13 @@ button {
   height: 20px;
   border-radius: 16px;
   font-size: small;
+  margin-right: 4px;
 }
 .line1 {
-  width: 75%;
+  width: 78%;
+ margin-left: 3px; 
 }
+
 .zeroButton {
   width: 80px;
   color: #19acff;
@@ -247,10 +251,11 @@ button {
 .divBtn {
   background: linear-gradient(to top right, #add8ff, #add8ff);
   color: rgb(16, 157, 255, 100);
+  margin-right: 13px;
 }
 .subBtn,
 .multyBtn {
-  margin-top: -40px;
+  margin-top: -42px;
   color: rgb(16, 157, 255, 100);
   border-width: 2px;
   border-color: antiquewhite;
@@ -263,8 +268,8 @@ button {
   background: linear-gradient(to top right, #add8ff, #add8ff);
 }
 .equal_operation{
-  height: 50px;
-  margin-top: -20px;
+  height: 55px;
+  margin-top: -22px;
   background-color: #19acff;
   box-shadow: inset -1px 2px 10px rgb(255, 255, 255);
 }
@@ -273,8 +278,8 @@ button {
   padding-bottom: 8px;
 }
 img {
-  width: 35px;
-  height: 35px;
+  width: 22px;
+  height: 22px;
 }
 input {
   height: 70px;
@@ -295,6 +300,7 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+ 
   width: 211.5px;
   height: calc(90% - 10px);
   background: linear-gradient(
@@ -310,6 +316,7 @@ input {
   transition: all 0.3s ease;
 }
 
+
 /* Scale content 1.5x larger when expanded */
 .black-Calculator.expanded {
   width: 200px;
@@ -320,6 +327,10 @@ input {
   justify-content: flex-start;
   background-color: black;
   
+}
+.black-Calculator button{
+  color: #007aff;
+
 }
 
 /* Hide black calculator when not expanded */
@@ -350,15 +361,19 @@ input {
 .white-Calculator.expanded .topCalculator,
 .black-Calculator.expanded .topCalculator {
   height: 30px;
-  font-size: 12px;
-  margin-top: 30px;
+  /*font-size: 12px;*/
+  margin-top: 20px;
+  
+ 
 }
 
 .white-Calculator.expanded .result,
 .black-Calculator.expanded .result {
   font-size: large;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+  height: 25px;
 }
+
 
 .white-Calculator.expanded .numbers,
 .black-Calculator.expanded .numbers {
@@ -419,7 +434,19 @@ input {
 .white-Calculator.expanded .multyBtn,
 .black-Calculator.expanded .subBtn,
 .black-Calculator.expanded .multyBtn {
-  margin-top: -49px;
+  margin-top: -50px;
+  
+}
+
+.white-Calculator.expanded .divBtn,
+.black-Calculator.expanded .divBtn{
+
+  margin-right: 10px;
+}
+.white-Calculator.expanded .line1,
+.black-Calculator.expanded .line1{
+  margin-left: -1px;
+  
 }
 .result{
   color: #007aff;

@@ -19,17 +19,14 @@ function expandWhiteCalculator() {
   HiddenInput.forEach(input => {
       input.classList.remove("DisplayInput")
   })
-  
+
  // displayInput.classList.remove("RBInp")
-  allButtons.forEach(button => {
 
-        button.classList.add('Btnexpanded');
-
-    });
   nbrStyle.classList.add("nbrsexpanded")
   container.classList.add("expanded")
   whiteCalc.classList.add("expanded")
   blackCalc.classList.add("hidden")
+
 }
 
 function expandBlackCalculator() {
@@ -37,21 +34,17 @@ function expandBlackCalculator() {
   const whiteCalc = document.getElementById("whiteCalc")
   const blackCalc = document.getElementById("blackCalc")
   const HiddenInput = document.querySelectorAll("#intOperation")
-  // const displayResult = document.getElementById("display_result")
-  // displayResult.value = 0;
+ 
    HiddenInput.forEach(input => {
       input.classList.remove("DisplayInput")
   })
-  /*displayResult.forEach(div =>{
-    div.innerHTML = ""
 
-  })*/
   
   //displayBInput.classList.remove("RBInp")
   container.classList.add("expanded")
   blackCalc.classList.add("expanded")
   whiteCalc.classList.add("hidden")
-  
+ 
 }
 
 function resetCalculators() {
@@ -67,12 +60,13 @@ function resetCalculators() {
    HiddenInput.forEach(input => {
        input.classList.add("DisplayInput")
   })
-  
- 
+
   //displayInput.classList.add("RBInp")
   container.classList.remove("expanded")
   whiteCalc.classList.remove("expanded", "hidden")
   blackCalc.classList.remove("expanded", "hidden")
+
+ 
 }
 
   document.addEventListener("click", (event) => {
@@ -169,6 +163,7 @@ function calculate() {
   // const expression = display.value;
   input_value = document.getElementById("intOperation");
   
+  
   try {
     // Using eval for simplicity (be careful in real projects!)
     const result = safeEval(input_value.value)
@@ -179,6 +174,9 @@ function calculate() {
     //display.value = result
    // display_Black = result
     CalculeWithInput()
+    displayResult.forEach(div => {
+    div.innerHTML = "";
+   })
   }catch(error) {
     display.value = "Error"
   }
@@ -235,4 +233,25 @@ function handleSpecialOperations(expression) {
     .replace(/π/g, "Math.PI") // π → Math.PI
     .replace(/(\d+)!/g, "factorial($1)") // 5! → factorial(5)
 }
+// Back Space Function
+function BackSpace() {
+  const Display = document.getElementById("intOperation");
+  Display.value = Display.value.slice(0, -1); // One line instead of four!
+  display.forEach(input => {
+    input.value = Display.value;
+  })
+  CalculeWithInput();
+}
+//  function BackSpace(){
+//   let Display = document.getElementById("intOperation");
+//   let Input_To_Str = Display.value;
+//   let str_len = Input_To_Str.length;
+//   let Temp_Str = Input_To_Str.substring(0,str_len - 1);
+// //  Display.value = Temp_Str;
+//   display.forEach(input => {
+//     input.value = Temp_Str ;
+//   })
+//   CalculeWithInput();
+  
+//  }
 
